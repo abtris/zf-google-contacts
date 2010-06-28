@@ -63,5 +63,10 @@ class IndexController extends Zend_Controller_Action
         $this->view->contacts = $contacts;        
       
     }
+    
+    public function thanksAction()
+    {
+        Zend_Debug::dump($this->getRequest()->getParams());
+    }
 }
 

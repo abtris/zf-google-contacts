@@ -1,10 +1,33 @@
-<form>
-<?php
-foreach ($this->contacts as $c) {
-	echo "<div>";
-		echo "<input type='checkbox' name='' />".$c['name'].' '.$c['email'];
-	echo "</div>";
+<style>
+#contacts {
+	height: 300px;
+	width: 300px;
+	font-size: 10pt;
+	border: 1px solid gray;
+	overflow: auto;
 }
+.mail { padding-left: 1.5em; }
+p { margin:0; padding:0; }
+</style>
+<h1>Contacts</h1>
+<form method='post' action='<?php echo $this->url(array("controller"=>"index", "action"=>"thanks")); ?>'>
+<?php
+	echo "<div id='contacts'>";
+	$i = 0;
+foreach ($this->contacts as $c) {
+		$i++;
+		echo "<p>";
+		echo "<input type='checkbox' name='$i' value='{$c['email']}' />";
+		if (!empty($c['name'])) { 
+				echo $c['name']."<br /><span class='mail'>".$c['email']."</span>";
+		} else {
+				echo $c['email']; 			
+		}
+		echo "</p>";
+}
+
+	echo "</div>";
 ?>
+<input type="submit" name="send" />
 </form>
  
