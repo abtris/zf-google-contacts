@@ -32,7 +32,7 @@ class ErrorController extends Zend_Controller_Action
         if ($this->getInvokeArg('displayExceptions') == true) {
             $this->view->exception = $errors->exception;
         }
-        
+        Zend_Debug::dump($errors);        
         $this->view->request   = $errors->request;
     }
 

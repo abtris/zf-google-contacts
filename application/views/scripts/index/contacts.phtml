@@ -1,9 +1,10 @@
+<form>
 <?php
-/**
- * Created by JetBrains PhpStorm RC.
- * User: prskavecl
- * Date: Jun 28, 2010
- * Time: 11:01:07 AM
- * To change this template use File | Settings | File Templates.
- */
+foreach ($this->contacts as $c) {
+	echo "<div>";
+		echo "<input type='checkbox' name='' />".$c['name'].' '.$c['email'];
+	echo "</div>";
+}
+?>
+</form>
  
